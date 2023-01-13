@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <title>Test OpenAI for Alice Skill</title>
+  <link
+    rel="shortcut icon"
+    href="{{ url_for('static', filename='greet.png') }}"
+  />
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}" />
+</head>
+
+<body>
+  <img src="{{ url_for('static', filename='greet.png') }}" class="icon" />
+  <h3>Узнай описание профессии</h3>
+  <form action="/" method="post">
+    <input type="text" name="prof" placeholder="Введите название профессии" required />
+    <input type="submit" value="Получить описание" />
+  </form>
+  {% if result %}
+  <div class="result">{{ result }}</div>
+  {% endif %}
+</body>
